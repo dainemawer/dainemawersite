@@ -1,0 +1,71 @@
+.card {
+	max-width: 48rem;
+
+	&:not(:last-child) {
+		margin: 0 auto 3rem auto;
+	}
+
+	&.lead {
+		margin-bottom: 3rem;
+
+		& .title {
+			font-size: 3rem;
+
+			@media (min-width: 768px) {
+				font-size: 4rem;
+			}
+		}
+
+		& .date {
+			font-size: 0.875rem;
+		}
+	}
+}
+
+.title {
+	font-family: var(--heading-font);
+	font-size: 2rem;
+	margin: 0.875rem 0 1.125rem 0;
+}
+
+.date {
+	color: var(--color-gray);
+	font-size: 0.75rem;
+	padding-left: 4rem;
+	position: relative;
+
+	&::before {
+		background: var(--color-black);
+		content: '';
+		display: block;
+		height: 3px;
+		left: 0;
+		position: absolute;
+		top: 50%;
+		transform: translateY(-50%);
+		width: 3.312rem;
+	}
+}
+
+.anchor {
+	color: var(--color-black);
+	outline: 0;
+	text-decoration: none;
+	transition: color 0.2s ease-in-out;
+
+	&:hover,
+	&:focus {
+		color: var(--hover-color);
+	}
+}
+
+.description {
+	color: var(--color-gray);
+	font-size: 0.875rem;
+	line-height: 1.5;
+	margin: 0;
+
+	@media (min-width: 768px) {
+		font-size: 1rem;
+	}
+}

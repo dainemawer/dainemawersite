@@ -1,0 +1,10 @@
+.logo {
+	color: var(--color-black);
+	transition: color 0.2s ease-in-out;
+
+	&:hover,
+	&:focus {
+		color: var(--hover-color);
+		outline: 0;
+	}
+}

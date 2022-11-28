@@ -1,0 +1,25 @@
+.list {
+	display: flex;
+	margin: 0.875rem 0 0 0;
+}
+
+.list > * + * {
+	margin-left: 1em;
+}
+
+.link {
+	color: var(--color-gray);
+	font-size: 0.875rem;
+	text-decoration: none;
+	transition: color 0.2s ease;
+
+	&:hover,
+	&:focus {
+		color: var(--color-black);
+		outline: 0;
+	}
+}
+
+.active {
+	color: var(--color-black);
+}

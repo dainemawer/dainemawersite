@@ -1,0 +1,42 @@
+.group {
+	display: block;
+	margin-bottom: 1.5rem;
+}
+
+.label {
+	display: block;
+	margin-bottom: 0.25rem;
+}
+
+.input {
+	display: block;
+	padding: 0.5rem;
+	width: 75%;
+}
+
+.form {
+	display: block;
+	margin-top: 2.5rem;
+}
+
+.button {
+	background-color: transparent;
+	border: 2px solid var(--color-black);
+	cursor: pointer;
+	font-family: var(--heading-font);
+	padding: 0.5rem 1rem;
+	transition: all 0.2s ease-in-out;
+
+	&:hover,
+	&:focus {
+		background-color: var(--color-black);
+		color: var(--color-white);
+	}
+}
+
+.error {
+	color: var(--color-red);
+	display: block;
+	font-size: 0.75rem;
+	margin-top: 0.25rem;
+}

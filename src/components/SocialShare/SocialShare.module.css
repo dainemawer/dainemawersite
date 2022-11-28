@@ -1,0 +1,25 @@
+.social {
+	display: flex;
+	list-style: none;
+
+	& > * + * {
+
+		&::before {
+			content: '|';
+			margin: 0 0.625rem;
+		}
+	}
+}
+
+.link {
+	border-bottom: 1px solid transparent;
+	color: var(--color-black);
+	text-decoration: none;
+	transition: border-bottom-color 0.2s ease-in-out;
+
+	&:hover,
+	&:focus {
+		border-bottom-color: currentColor;
+		outline: 0;
+	}
+}

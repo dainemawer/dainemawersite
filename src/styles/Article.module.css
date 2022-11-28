@@ -1,0 +1,91 @@
+.article {
+	max-width: 48rem;
+	margin: 0 auto;
+}
+
+.title {
+	font-family: 'DM Serif Display', serif;
+	font-size: 4.5rem;
+	line-height: 1.2;
+	margin: 0 0 2.375rem 0;
+}
+
+.content {
+	margin-top: 2rem;
+
+	& > h2 {
+		font-family: 'DM Serif Display', serif;
+		font-size: 2.5rem;
+		line-height: 1.2;
+		margin: 0 0 1.5rem 0;
+	}
+
+	& > h3 {
+		font-family: 'DM Serif Display', serif;
+		font-size: 2rem;
+		line-height: 1.2;
+		margin: 0 0 1.5rem 0;
+	}
+
+	& > p {
+		color: var(--color-gray);
+		font-size: 1.125rem;
+		line-height: 1.5;
+	}
+
+	& > p:first-child {
+		font-size: 1.5rem;
+		margin-top: 0;
+	}
+
+	& > ul {
+		list-style-type: disc;
+		padding-left: 2.5rem;
+	}
+
+	& > blockquote {
+		border-left: 3px solid var(--color-black);
+		padding-left: 1.5rem;
+	}
+}
+
+.list {
+	border-top: 2px solid #000;
+	border-bottom: 2px solid #000;
+	display: flex;
+	justify-content: space-between;
+	padding: 1.125rem 0;
+}
+
+.item {
+	color: var(--color-gray);
+	font-size: 0.75rem;
+}
+
+.breadcrumbs {
+	color: var(--color-gray);
+	display: flex;
+	font-size: 0.875rem;
+	margin-bottom: 1rem;
+}
+
+.breadcrumbs a {
+	border-bottom: 1px solid transparent;
+	color: var(--color-black);
+	text-decoration: none;
+	transition: border-bottom-color 0.2s ease-in-out;
+
+	&:hover,
+	&:focus {
+		border-bottom-color: currentColor;
+		outline: 0;
+	}
+}
+
+.breadcrumbs > * + * {
+
+	&::before {
+		content: '>';
+		margin: 0 0.625rem;
+	}
+}

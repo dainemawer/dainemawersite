@@ -1,0 +1,29 @@
+---
+title: 'Correlating LCP to FCP in SpeedCurve'
+status: 'published'
+author:
+  name: 'Daine Mawer'
+  picture: 'https://avatars.githubusercontent.com/u/48082535?v=4'
+slug: 'correlating-lcp-to-fcp-in-speedcurve'
+description: 'All of this text is editable. Simply click anywhere in the paragraph or heading text and start typing. All of this text is editable. Simply click anywhere in the paragraph or heading text and start typing. All of this text is editable. Simply click anywhere in the paragraph or heading text and start typing. All of this text is editable. Simply click anywhere in the paragraph or heading text and start typing.'
+coverImage: ''
+publishedAt: '2022-11-26T06:03:45.600Z'
+---
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Eu scelerisque felis imperdiet proin fermentum. Ante metus dictum at tempor commodo. Fermentum et sollicitudin ac orci phasellus egestas tellus rutrum tellus. Sit amet facilisis magna etiam tempor orci eu. Egestas congue quisque egestas diam in arcu cursus. Et tortor at risus viverra adipiscing at in tellus integer. Mauris pharetra et ultrices neque ornare aenean euismod elementum. Pellentesque eu tincidunt tortor aliquam nulla. Posuere lorem ipsum dolor sit amet. Sapien faucibus et molestie ac. Sed enim ut sem viverra. Fusce ut placerat orci nulla pellentesque. Vitae aliquet nec ullamcorper sit amet risus nullam eget felis. Sodales ut etiam sit amet nisl purus in. Cursus turpis massa tincidunt dui ut ornare lectus. Integer eget aliquet nibh praesent tristique magna sit amet. Aliquet sagittis id consectetur purus. Nunc mattis enim ut tellus elementum sagittis.
+
+```javascript
+function getData() {
+ var data = fetch(url);
+ return data;
+}
+```
+
+Potenti nullam ac tortor vitae. Adipiscing diam donec adipiscing tristique risus nec feugiat. Accumsan tortor posuere ac ut consequat semper viverra. Potenti nullam ac tortor vitae purus. Cras tincidunt lobortis feugiat vivamus. Tempor nec feugiat nisl pretium fusce id velit ut. Orci phasellus egestas tellus rutrum tellus pellentesque eu. Vulputate eu scelerisque felis imperdiet proin. Erat imperdiet sed euismod nisi. Varius morbi enim nunc faucibus a pellentesque sit. Sed vulputate odio ut enim. Neque viverra justo nec ultrices dui sapien eget. Quam adipiscing vitae proin sagittis.
+
+Rhoncus mattis rhoncus urna neque viverra. Turpis nunc eget lorem dolor sed viverra ipsum nunc. Iaculis nunc sed augue lacus. Amet consectetur adipiscing elit pellentesque habitant morbi tristique senectus. Eget nullam non nisi est. Non blandit massa enim nec dui nunc. Diam ut venenatis tellus in metus vulputate eu. Elementum sagittis vitae et leo. Aenean euismod elementum nisi quis eleifend. In hac habitasse platea dictumst quisque sagittis purus. Diam in arcu cursus euismod quis. Nisi lacus sed viverra tellus in hac habitasse platea dictumst. Est placerat in egestas erat imperdiet sed euismod nisi. Volutpat odio facilisis mauris sit amet. A scelerisque purus semper eget duis at tellus. Non nisi est sit amet facilisis magna etiam tempor.
+
+Ornare suspendisse sed nisi lacus sed viverra tellus. Congue eu consequat ac felis donec et odio pellentesque diam. Vel pretium lectus quam id leo. Consectetur purus ut faucibus pulvinar elementum integer. Porttitor leo a diam sollicitudin tempor id eu nisl nunc. Neque vitae tempus quam pellentesque nec nam aliquam. Amet consectetur adipiscing elit duis tristique sollicitudin nibh. Tristique nulla aliquet enim tortor at auctor. Posuere sollicitudin aliquam ultrices sagittis orci a. Turpis egestas maecenas pharetra convallis posuere morbi. Neque aliquam vestibulum morbi blandit cursus risus at ultrices. Mauris a diam maecenas sed enim ut sem viverra. Sagittis vitae et leo duis. Dictumst vestibulum rhoncus est pellentesque.
+
+Sed enim ut sem viverra aliquet eget. Risus in hendrerit gravida rutrum quisque non tellus orci ac. Mi ipsum faucibus vitae aliquet nec ullamcorper sit amet risus. Magna ac placerat vestibulum lectus mauris ultrices eros. Ligula ullamcorper malesuada proin libero nunc consequat interdum varius sit. Sit amet commodo nulla facilisi nullam vehicula ipsum. Lorem ipsum dolor sit amet consectetur adipiscing elit. Malesuada proin libero nunc consequat interdum. Sagittis eu volutpat odio facilisis mauris sit amet massa vitae. Vel orci porta non pulvinar. Consectetur adipiscing elit pellentesque habitant morbi tristique senectus et netus. Proin fermentum leo vel orci porta non pulvinar neque laoreet. Amet mattis vulputate enim nulla aliquet. Suscipit tellus mauris a diam maecenas sed enim.
+
