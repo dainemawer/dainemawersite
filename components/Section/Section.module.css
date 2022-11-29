@@ -1,13 +1,22 @@
 .section {
 	max-width: 48rem;
 	margin: 0 auto;
+	padding: 0 1.25rem;
+
+	@media (min-width: 48rem) {
+		padding: 0;
+	}
 }
 
 .header {
 	display: flex;
 	justify-content: center;
 	position: relative;
-	margin: 0 0 4rem 0;
+	margin: 0 0 2rem 0;
+
+	@media (min-width: 48rem) {
+		margin: 0 0 4rem 0;
+	}
 
 	&::after {
 		content: '';

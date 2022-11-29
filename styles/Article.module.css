@@ -1,13 +1,22 @@
 .article {
 	max-width: 48rem;
 	margin: 0 auto;
+	padding: 0 1.25rem;
+
+	@media (min-width: 48rem) {
+		padding: 0;
+	}
 }
 
 .title {
 	font-family: 'DM Serif Display', serif;
-	font-size: 4.5rem;
+	font-size: 3rem;
 	line-height: 1.2;
 	margin: 0 0 2.375rem 0;
+
+	@media (min-width: 48rem) {
+		font-size: 4.5rem;
+	}
 }
 
 .content {

@@ -9,8 +9,9 @@
 import { Card } from '@components/Card'
 import { Section } from '@components/Section'
 import Layout from '@components/Layout'
-import { NextSeo } from 'next-seo';
+import { NextSeo, SocialProfileJsonLd } from 'next-seo';
 import { getDocuments } from 'outstatic/server'
+import generateRSSFeed from '@util/rss'
 
 interface PostsProps {
 	articles: {
@@ -25,20 +26,37 @@ interface PostsProps {
 
 export default function Home({ articles }: PostsProps): JSX.Element {
 	const recent = articles.slice(1, 4);
+	const latest = articles[0];
 
-	return (
-		<Layout>
+	const SEO = (
+		<>
 			<NextSeo
 				title="Home"
 			/>
+			<SocialProfileJsonLd
+				type="Person"
+				name="Daine Mawer"
+				url="http://dainemawer.com"
+				sameAs={[
+					'https://www.linkedin.com/in/dainemawer',
+				]}
+			/>
+		</>
+	);
+
+	return (
+		<Layout>
+			{SEO}
 			<Section>
-				<Card date={articles[0]?.publishedAt} title={articles[0]?.title} description={articles[0]?.description} slug={articles[0]?.slug} lead />
+				<Card date={latest?.publishedAt} title={latest?.title} description={latest?.description} slug={latest?.slug} lead />
 			</Section>
-			<Section title="Recent">
-				{recent.length > 0 && recent.map((article) => (
-					<Card key={article?.slug} date={article?.publishedAt} title={article?.title} description={article?.description} slug={article?.slug} />
-				))}
-			</Section>
+			{recent.length > 0 && (
+				<Section title="Recent">
+					{recent.map((article) => (
+						<Card key={article?.slug} date={article?.publishedAt} title={article?.title} description={article?.description} slug={article?.slug} />
+					))}
+				</Section>
+			)}
 		</Layout>
 	)
 }
@@ -46,6 +64,8 @@ export default function Home({ articles }: PostsProps): JSX.Element {
 export const getStaticProps = async () => {
 	const params = ['title', 'publishedAt', 'description', 'coverImage', 'slug']
 	const articles = getDocuments('articles', params)
+
+	generateRSSFeed();
 
 	return {
 		props: { articles }

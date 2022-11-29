@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title><![CDATA[Daine Mawer | RSS Feed]]></title>
+        <description><![CDATA[My site description]]></description>
+        <link>https://dainemawer.com</link>
+        <image>
+            <url>https://dainemawer.com/logo.png</url>
+            <title>Daine Mawer | RSS Feed</title>
+            <link>https://dainemawer.com</link>
+        </image>
+        <generator>RSS for Node</generator>
+        <lastBuildDate>Tue, 29 Nov 2022 15:20:25 GMT</lastBuildDate>
+        <atom:link href="https://dainemawer.com/rss.xml" rel="self" type="application/rss+xml"/>
+        <pubDate>Tue, 29 Nov 2022 15:20:25 GMT</pubDate>
+        <copyright><![CDATA[All rights reserved 2022, Daine Mawer]]></copyright>
+        <item>
+            <title><![CDATA[How to inspire Individual Contributors]]></title>
+            <description><![CDATA[Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Potenti nullam ac tortor vitae purus faucibus ornare. ]]></description>
+            <link>Daine Mawer/articles/how-to-inspire-individual-contributors</link>
+            <guid isPermaLink="true">Daine Mawer/articles/how-to-inspire-individual-contributors</guid>
+            <pubDate>Tue, 29 Nov 2022 06:50:32 GMT</pubDate>
+        </item>
+    </channel>
+</rss>

@@ -9,7 +9,7 @@ import Link from 'next/link'
 import { useEffect } from 'react'
 import Prism from 'prismjs'
 import SocialShare from '@components/SocialShare'
-import { NextSeo } from 'next-seo';
+import { NextSeo, ArticleJsonLd, BreadcrumbJsonLd } from 'next-seo';
 
 import styles from '@styles/Article.module.css';
 import "prismjs/themes/prism-tomorrow.css";
@@ -55,11 +55,56 @@ export default function Post({ post }: Post) {
 		return <ErrorPage statusCode={404} />
 	}
 
-	return (
-		<Layout>
+	const SEO = (
+		<>
 			<NextSeo
 				title={post.title}
 			/>
+			<ArticleJsonLd
+				url={`https://dainemawer.com/articles/${post.slug}`}
+				title={post.title}
+				images={[
+					'https://example.com/photos/1x1/photo.jpg',
+					'https://example.com/photos/4x3/photo.jpg',
+					'https://example.com/photos/16x9/photo.jpg',
+				]}
+				datePublished={post.publishedAt}
+				dateModified={post.publishedAt}
+				authorName={[
+					{
+						name: 'Daine Mawer',
+						url: 'https://dainemawer.com',
+					},
+				]}
+				publisherName="Daine Mawer"
+				description={post.description}
+				isAccessibleForFree={true}
+			/>
+			<BreadcrumbJsonLd
+				itemListElements={[
+					{
+						position: 1,
+						name: 'Home',
+						item: 'https://dainemawer.com',
+					},
+					{
+						position: 2,
+						name: 'Articles',
+						item: 'https://dainemawer.com/articles',
+					},
+					{
+						position: 3,
+						name: post.title,
+						item: `https://dainemawer.com/articles/${post.slug}`,
+					},
+				]}
+			/>
+		</>
+	);
+
+	return (
+		<Layout>
+			{SEO}
 			<article className={styles.article}>
 				<ul className={styles.breadcrumbs}>
 					<li><Link href="/">Home</Link></li>

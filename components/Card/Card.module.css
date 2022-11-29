@@ -6,12 +6,17 @@
 	}
 
 	&.lead {
-		margin-bottom: 3rem;
+		margin-bottom: 1.5rem;
+
+		@media (min-width: 48rem) {
+			margin-bottom: 3rem;
+		}
+
 
 		& .title {
 			font-size: 3rem;
 
-			@media (min-width: 768px) {
+			@media (min-width: 48rem) {
 				font-size: 4rem;
 			}
 		}

@@ -1,9 +1,9 @@
 import { DefaultSeoProps } from 'next-seo';
 
-const SITE_TITLE = 'My Site';
-const SITE_DESCRIPTION = 'My site description';
-const SITE_URL = 'https://mysite.com';
-const SITE_IMAGE = '/opengraph.png';
+export const SITE_TITLE = 'Daine Mawer';
+export const SITE_DESCRIPTION = 'My site description';
+export const SITE_URL = 'https://dainemawer.com';
+export const SITE_IMAGE = '/opengraph.png';
 
 
 const config: DefaultSeoProps = {
