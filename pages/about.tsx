@@ -15,13 +15,14 @@ import convertToHTML from '@util/remark'
 import styles from '@styles/Article.module.css';
 
 export default function About({ page }): JSX.Element {
+
 	return (
 		<Layout>
 			<NextSeo
 				title="About"
 			/>
 			<Section title="About">
-				<div className={styles.content} dangerouslySetInnerHTML={{ __html: page }} />
+				{page && <div className={styles.content} dangerouslySetInnerHTML={{ __html: page }} />}
 			</Section>
 		</Layout>
 	)

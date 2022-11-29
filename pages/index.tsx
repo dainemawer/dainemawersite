@@ -35,7 +35,7 @@ export default function Home({ articles }: PostsProps): JSX.Element {
 				<Card date={articles[0]?.publishedAt} title={articles[0]?.title} description={articles[0]?.description} slug={articles[0]?.slug} lead />
 			</Section>
 			<Section title="Recent">
-				{recent.map((article) => (
+				{recent.length > 0 && recent.map((article) => (
 					<Card key={article?.slug} date={article?.publishedAt} title={article?.title} description={article?.description} slug={article?.slug} />
 				))}
 			</Section>

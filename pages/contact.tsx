@@ -65,7 +65,7 @@ export default function Contact({ page }): JSX.Element {
 				title="Contact"
 			/>
 			<Section title="Contact">
-				<div className={styles.content} dangerouslySetInnerHTML={{ __html: page }} />
+				{page && <div className={styles.content} dangerouslySetInnerHTML={{ __html: page }} />}
 				<form className={styles.form} onSubmit={handleSubmit(onSubmit)}>
 					<div className={styles.group}>
 						<label htmlFor="">

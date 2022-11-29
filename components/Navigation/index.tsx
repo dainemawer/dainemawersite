@@ -14,7 +14,6 @@ interface NavigationProps {
 import Link from 'next/link'
 import { useRouter } from 'next/router';
 import styles from './Navigation.module.css'
-import { classNames } from '@util/classes'
 
 export default function Navigation({ id, label }: NavigationProps): JSX.Element {
 	const router = useRouter();

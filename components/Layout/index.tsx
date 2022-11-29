@@ -16,7 +16,7 @@ export default function Layout({ children }): JSX.Element {
 		<>
 			<SkipLink />
 			<Header />
-			<main id="site-content" className="site-content">{children}</main>
+			{children && <main id="site-content" className="site-content">{children}</main>}
 			<Footer />
 		</>
 

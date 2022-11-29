@@ -30,7 +30,7 @@ export default function Articles({ articles }: PostsProps): JSX.Element {
 				title="Articles"
 			/>
 			<Section title="All Articles">
-				{articles.map((article) => (
+				{articles.length > 0 && articles.map((article) => (
 					<Card key={article.slug} date={article.publishedAt} title={article.title} description={article.description} slug={article.slug} />
 				))}
 			</Section>

@@ -20,15 +20,21 @@ export const Card = ({ date, title, description, slug, lead }: CardProps) => {
 
 	return (
 		<article aria-label={title} id={`post-${slug}`} className={classes}>
-			<time dateTime={date} className={styles.date}>
-				<span className={styles.time}>{formatDate(date)}</span>
-			</time>
-			<h3 className={styles.title}>
-				<Link className={styles.anchor} href={`/articles/${slug}`}>{title}</Link>
-			</h3>
-			<p className={styles.description}>
-				{description}
-			</p>
+			{date && (
+				<time dateTime={date} className={styles.date}>
+					<span className={styles.time}>{formatDate(date)}</span>
+				</time>
+			)}
+			{title && (
+				<h3 className={styles.title}>
+					<Link className={styles.anchor} href={`/articles/${slug}`}>{title}</Link>
+				</h3>
+			)}
+			{description && (
+				<p className={styles.description}>
+					{description}
+				</p>
+			)}
 		</article>
 	)
 }
