@@ -104,7 +104,6 @@ export const getStaticProps = async () => {
 	const content = await convertToHTML(page.content || '')
 
 	return {
-		props: { page: content },
-		revalidate: 60
+		props: { page: content }
 	}
 }

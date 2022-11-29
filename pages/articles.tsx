@@ -43,7 +43,6 @@ export const getStaticProps = async () => {
 	const articles = getDocuments('articles', params)
 
 	return {
-		props: { articles },
-		revalidate: 60
+		props: { articles }
 	}
 }
