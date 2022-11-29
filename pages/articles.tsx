@@ -38,11 +38,12 @@ export default function Articles({ articles }: PostsProps): JSX.Element {
 	)
 }
 
-export const getServerSideProps = async () => {
+export const getStaticProps = async () => {
 	const params = ['title', 'publishedAt', 'description', 'coverImage', 'slug']
 	const articles = getDocuments('articles', params)
 
 	return {
-		props: { articles }
+		props: { articles },
+		revalidate: 60
 	}
 }

@@ -27,11 +27,12 @@ export default function About({ page }): JSX.Element {
 	)
 }
 
-export const getServerSideProps = async () => {
+export const getStaticProps = async () => {
 	const page = getDocumentBySlug('pages', 'about', ['content'])
 	const content = await convertToHTML(page.content || '')
 
 	return {
-		props: { page: content }
+		props: { page: content },
+		revalidate: 60
 	}
 }

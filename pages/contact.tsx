@@ -99,11 +99,12 @@ export default function Contact({ page }): JSX.Element {
 	)
 }
 
-export const getServerSideProps = async () => {
+export const getStaticProps = async () => {
 	const page = getDocumentBySlug('pages', 'contact', ['content'])
 	const content = await convertToHTML(page.content || '')
 
 	return {
-		props: { page: content }
+		props: { page: content },
+		revalidate: 60
 	}
 }
