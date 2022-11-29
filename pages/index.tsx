@@ -24,7 +24,6 @@ interface PostsProps {
 }
 
 export default function Home({ articles }: PostsProps): JSX.Element {
-	const { title, description, slug, publishedAt } = articles[0];
 	const recent = articles.slice(1, 4);
 
 	return (
@@ -33,11 +32,11 @@ export default function Home({ articles }: PostsProps): JSX.Element {
 				title="Home"
 			/>
 			<Section>
-				<Card date={publishedAt} title={title} description={description} slug={slug} lead />
+				<Card date={articles[0]?.publishedAt} title={articles[0]?.title} description={articles[0]?.description} slug={articles[0]?.slug} lead />
 			</Section>
 			<Section title="Recent">
 				{recent.map((article) => (
-					<Card key={article.slug} date={article.publishedAt} title={article.title} description={article.description} slug={article.slug} />
+					<Card key={article?.slug} date={article?.publishedAt} title={article?.title} description={article?.description} slug={article?.slug} />
 				))}
 			</Section>
 		</Layout>
