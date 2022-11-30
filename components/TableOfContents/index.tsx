@@ -7,23 +7,28 @@ const TableOfContents = () => {
 
 	useEffect(() => {
 		const tags = document.querySelectorAll('h2, h3');
-		const elements = Array.from(tags) as HTMLElement[];
 
-		elements.map(
-			(elem) => ({
+		tags.length > 0 && tags.forEach((tag: HTMLElement, index: number) => {
+			tag.setAttribute('id', `heading-${index}`);
+		})
+
+		const elements = tags && Array.from(tags)
+			.map((elem: HTMLElement, index: number) => ({
+				id: `heading-${index}`,
 				text: elem.innerText,
-			})
-		);
+			}))
 
 		setHeadings(elements)
-	}, [headings])
+
+	}, []);
 
 	return (
 		<nav aria-label="Article Table of Contents" className={styles.toc}>
-			<ul>
+			<h4 className={styles.title}>Table of Contents</h4>
+			<ul className={styles.list}>
 				{headings && headings.map(heading => (
-					<li key={heading.id}>
-						<a href={`#${heading.id}`}>{heading.text}</a>
+					<li className={styles.item} key={heading.id}>
+						<a className={styles.anchor} href={`#${heading.id}`}>{heading.text}</a>
 					</li>
 				))}
 			</ul>
