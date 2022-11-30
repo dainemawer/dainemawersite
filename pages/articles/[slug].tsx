@@ -6,7 +6,7 @@ import ErrorPage from 'next/error'
 import Layout from '@components/Layout'
 import { formatDate } from '@util/date'
 import Link from 'next/link'
-import { useEffect } from 'react'
+import { useEffect, useRef } from 'react'
 import Prism from 'prismjs'
 import SocialShare from '@components/SocialShare'
 import { NextSeo, ArticleJsonLd, BreadcrumbJsonLd } from 'next-seo';
@@ -43,6 +43,7 @@ interface Params {
 
 export default function Post({ post }: Post) {
 	const router = useRouter()
+	const contentRef = useRef(null)
 
 	useEffect(() => {
 
@@ -119,7 +120,8 @@ export default function Post({ post }: Post) {
 						<SocialShare title={post.title} url={post.slug} description={post.description} />
 					</li>
 				</ul>
-				<div className={styles.content} dangerouslySetInnerHTML={{ __html: post.content }} />
+				<p dangerouslySetInnerHTML={{ __html: post.description }}></p>
+				<div ref={contentRef} className={styles.content} dangerouslySetInnerHTML={{ __html: post.content }} />
 			</article>
 		</Layout>
 	)
