@@ -10,6 +10,7 @@ import { useEffect } from 'react'
 import Prism from 'prismjs'
 import SocialShare from '@components/SocialShare'
 import { NextSeo, ArticleJsonLd, BreadcrumbJsonLd } from 'next-seo';
+import TableOfContents from '@components/TableOfContents'
 
 import styles from '@styles/Article.module.css';
 import "prismjs/themes/prism-tomorrow.css";
@@ -118,9 +119,9 @@ export default function Post({ post }: Post) {
 						<SocialShare title={post.title} url={post.slug} description={post.description} />
 					</li>
 				</ul>
+				<TableOfContents />
 				<div className={styles.content} dangerouslySetInnerHTML={{ __html: post.content }} />
 			</article>
-
 		</Layout>
 	)
 
