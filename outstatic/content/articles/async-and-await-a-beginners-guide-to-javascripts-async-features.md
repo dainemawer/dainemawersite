@@ -75,7 +75,7 @@ Some benefits of using the `async` and `await` keywords are:
 
 3. Easier to learn and understand
 
-4. Less verbose and requires less understanding of the internal workings of Promises.
+4. Better error handling
 
 ### 4\. When to Use a Promise?
 
