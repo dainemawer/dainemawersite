@@ -10,49 +10,60 @@ coverImage: ''
 publishedAt: '2023-01-06T18:47:43.425Z'
 ---
 
-The return statement is often an overlooked element of any programming language. It allows you to specify a value to be returned by a function or method and signals the end of its execution. Proper use of this statement is crucial for ensuring your code runs smoothly and may prevent bugs and errors from appearing in your program. Here are five tips for using the return statement properly:
+The `return` statement is an often overlooked programming paradigm. It allows you to specify a value to be returned by a function and signals the end of its execution. Using this statement properly can ensure your code runs smoothly and may prevent unexpected bugs. Here are five tips for using the `return` statement effectively:
 
 ### 1\. Use the return statement to end a function or method
 
-The return statement signals the end of a function or method. When the return statement is encountered, the function or method immediately terminates, regardless of where it appears in the code. This is why it's important to use the return statement wisely and only when necessary.
+The `return` statement signals the end of a function or method. When the `return` statement is encountered, the function immediately terminates:
 
 ```javascript
-function greet(name) {
-  console.log(`Hello, ${name}`);
-  return;  // end the function here
+function sayMyName(name) {
+  console.log(name);
+  return;  // end the function
 }
+```
 
-greet("John");  // prints "Hello, John"
+Its worthwhile noting that the `return` statement is affected by ASI ([Automatic Semicolon Insertion](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Lexical_grammar#automatic_semicolon_insertion)). This means that you cannot create a new line after the `return` statement is called:
+
+```javascript
+/* Incorrect - would return nothing and flag an error. */
+return;
+name;
+
+/* Correct - would return the value of name. */
+return (
+ name;
+);
 ```
 
 ### 2\. Return a value of the correct data type:
 
-When using the return statement, you should make sure to return a value of the correct data type. For example, if the function is expected to return an integer, you should return an integer; if it's expected to return a string or a float, you should also use those types instead of returning an integer. If you fail to return the correct data type when using this statement, your program will behave in unexpected ways and may result in errors.
+When using the `return` statement, make sure to return the correct data-type of the intended value. If you fail to return the correct data type, your program will behave in unexpected ways and may result in errors. This is due to a feature of JavaScript known as [Type Coercion](https://developer.mozilla.org/en-US/docs/Glossary/Type_coercion).
+
+You can read my articles on "[Using TypeScript](https://www.dainemawer.com/outstatic/articles/why-use-typescript-the-benefits-of-static-type-checking-in-javascript)" and "Getting Started with JavaScript Unit Testing" to find out more about how to confidently work around this pitfall.
 
 ```javascript
 function add(a, b) {
   return a + b;  // correct - returns a number
 }
 
-function concat(a, b) {
-  return a + b;  // correct - returns a string
+function subtract(a, b) {
+  return a - b;  // correct - returns a number
 }
 
-function avg(a, b) {
-  return (a + b) / 2;  // correct - returns a number
-}
-
-function add(a, b) {
-  return a + b + "";  // incorrect - returns a string instead of a number
+function multiply(a, b) {
+  return `${a} times ${b} is equal to: ${a * b}`;  // incorrect - returns a string
 }
 ```
 
 ### 3\. Return a value that is appropriate for the purpose of the function
 
-It is important to note that the value returned by a function should be appropriate for the purpose of the function. For example, if the function is supposed to calculate the average of a list of numbers, returning the sum of the numbers would not be correct. Make sure that you carefully consider what information you need from your data when writing functions and how it can affect how you design your code.
+When writing functions, it is important to consider what information you need from your data and how it can affect your code. For example, if your function needs to calculate the average of a list of numbers, returning the sum of those numbers would not be correct.
+
+Make sure that you carefully consider what information you need when writing functions and how it can affect your code.
 
 ```javascript
-function avg(numbers) {
+function average(numbers) {
   let total = 0;
   for (let number of numbers) {
     total += number;
@@ -60,7 +71,7 @@ function avg(numbers) {
   return total;  // incorrect - returns the sum of the numbers, not the average
 }
 
-function avg(numbers) {
+function average(numbers) {
   let total = 0;
   for (let number of numbers) {
     total += number;
@@ -69,25 +80,48 @@ function avg(numbers) {
 }
 ```
 
+When writing a function its important to be intentional about:
+
+1. What the `function` is intended to do
+
+2. What data the `function` is intended to return
+
+3. Is the data returned immutable?
+
 ### 4\. Use multiple return statements if necessary
 
-In some cases, you may need to execute multiple return statements in a single function or method. For example, you may want to return a value immediately if certain conditions are met but continue executing the function otherwise. To make sure that this happens correctly, make sure that the function only returns once and that the correct value is returned.
+In some cases, you may want to return a value immediately if certain conditions are met. This would apply to using `if` statements as well as `switch` statements.
 
 ```javascript
-function divide(a, b) {
-  if (b === 0) {
-    return "Cannot divide by 0";  // return immediately if the divisor is 0
+function options(option) {
+  switch(option) {
+    case 'DnD':
+     return 'do-not-disturb';
+   case 'Silent':
+     return 'silent-mode';
+   default: 
+     return 'no-option-selected';
   }
-  return a / b;  // return the result of the division
 }
 
-console.log(divide(4, 2));  // prints 2
-console.log(divide(4, 0));  // prints "Cannot divide by 0"
+function getOptions(option) {
+ if (option === 'DnD') {
+   return 'do-not-disturb';
+ }
+ 
+ return option;
+}
+
+function
 ```
+
+In the `options` function above, we can omit the `break` keyword along with a temporary `variable` to store the value if we explicitly return within a `case` \- this makes code more readable and saves memory.
+
+In the `getOptions` function, we can also always ensure that we return a value regardless of whether a condition is met. If the condition is `true`, it will execute the `return` statement within the `if` \- if not, it simply ignores that statement and returns the value of `option`
 
 ### 5\. Don't forget the return statement:
 
-A return statement is an important part of any function or method. If you do not include a return statement, your code may behave unexpectedly, because it will not know when to stop executing.
+Considering JavaScript is a very forgiving language, make sure to always include a return statement. Not doing so could lead to JavaScript or other languages interpreting logic in a less than ideal way. In the below example, the `sumSquares` function would not `return` any useful value when logged to the console.
 
 ```javascript
 function sumSquares(numbers) {
@@ -102,4 +136,6 @@ console.log(sumSquares([1, 2, 3]));  // prints undefined instead of the expected
 ```
 
 By following these tips, you can use the return statement effectively and ensure that your code runs smoothly and correctly. Proper use of the return statement is an essential part of good programming practice, and taking the time to get it right can save you a lot of headaches in the long run.
+
+You can [read more about the return statement](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/return) on MDN.
 
