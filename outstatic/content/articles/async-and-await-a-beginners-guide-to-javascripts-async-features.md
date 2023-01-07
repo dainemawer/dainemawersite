@@ -97,7 +97,7 @@ As Promises are asynchronous, there use cases are limited and should not be over
 
 3. If an `async` function is declared, it will *always* return a `Promise`
 
-4. Don't use an `async` function on click events if they do not fetch data.
+4. Don't use an `async` function on click events if they do not fetch data, write a file to the disk or POST data to an API.
 
 5. Remember that `async` and `await` are just syntax updates to the JavaScript language, meaning they do not provide any inherent performance improvements to your application.
 
